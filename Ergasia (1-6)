@@ -1,0 +1,72 @@
+/*
+
+//01
+void hello() {
+        System.out.println("Hello World!");
+    }
+
+//02
+void helloLoop(){
+    for(int i=1;i<=3;i++)
+        System.out.println("Hello World!");
+}
+
+//03
+public class HelloWorld {
+    public static void main(String[] args) {
+        for(int i=1;i<=3;i++)
+        System.out.println("Hello World!");
+    }
+}
+
+
+//04
+String day(int d) {
+    String str_day = "null";
+    switch(d){
+        case 0:
+          str_day = "Monday";
+          break;
+        case 1:
+          str_day = "Tuesday";
+          break;
+        case 2:
+          str_day = "Wednesday";
+          break;
+        case 3:
+          str_day = "Thursday";
+          break;
+        case 4:
+          str_day = "Friday";
+          break;
+        case 5:
+          str_day = "Saturday";
+          break;
+        case 6:
+          str_day = "Sunday";
+          break;
+  };
+  return str_day;
+}
+
+
+//05
+int maxOfFour(int x1,int x2,int x3,int x4){
+    int max=x1;
+    if (x2>max) max=x2;
+    if (x3>max) max=x3;
+    if (x4>max) max=x4;
+    return max;
+}
+
+
+//06
+int maxVal(int[]A){
+    //int[]A=new int[j];
+    int max=A[0];
+    for(int i=0;i<A.length;i++)
+        if (A[i]>max) max=A[i];
+    return max;
+}
+
+*/
