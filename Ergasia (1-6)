@@ -69,4 +69,11 @@ int maxVal(int[]A){
     return max;
 }
 
+//07
+int sumOfFirstAndLast(int[] A){
+    int x=A.length-1;
+    int sum=A[0]+A[x];
+    return sum;
+}
+
 */
