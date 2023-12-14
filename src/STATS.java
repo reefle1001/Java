@@ -269,6 +269,9 @@ class STATS {
 
     /* OUT PUT FUNCTION N2 - SHOWS ALL USER-STATED STATS */
     void ShowUserStatedStats(){
+        
+        if (L == false) return;
+        
         ChangeLine();
         ShowNames();
         ChangeLine();
@@ -301,6 +304,9 @@ class STATS {
 
     /* OUT PUT FUNCTION N3 - SHOWS ALL PLAYER STATS [AFTER CALCULATIONS] */
     void ShowPlayerStats(){
+        
+        if (L == false) return;
+        
         ChangeLine();
         ShowNames();
         ChangeLine();
@@ -364,11 +370,19 @@ class STATS {
         System.out.println("Sword : " + SwordName);
     }
 
+
+    
+    //boolean values - test
+    boolean K = true;
+    boolean L = true;  
+    
+
     /* SUPPORTING FUNCTION 3.0 - USING ANOTHER S.F., MAKES SURE ALL USER-STATED VALUES ARE VIABLE */
     private static void InnerStatCheck(int[] array) {
         for (int v : array) {
             ValueViability (v);
-        }
+        } 
+        if (K == false) L = false;
     }
 
     /* SUPPORTING FUNCTION 3.1 - MAKES SURE USER-STATED VALUE IS VIABLE */
@@ -383,6 +397,7 @@ class STATS {
             System.out.println(str2);
             ChangeLine();
             ChangeLine();
+            K =false;
         }
     }
     /* =================================================================================================== */
