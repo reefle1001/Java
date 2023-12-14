@@ -392,12 +392,12 @@ class STATS {
             String str1, str2;
             str1 = String.valueOf(Value);
             str2 = String.format("Please change following nonviable value : " + str1);
-            ChangeLine();
+            
             ChangeLine();
             System.out.println(str2);
             ChangeLine();
-            ChangeLine();
-            K =false;
+            
+            K = false;
         }
     }
     /* =================================================================================================== */
