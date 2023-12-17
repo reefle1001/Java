@@ -8,8 +8,8 @@ public class Main {
 
         //p1.Input_Armor_Stats_By_Description("SUPERIOR_DRAGON", "SPIKED");
 
-        p1.Input_Sword_Stats_By_Description("ASPECT_OF_THE_DRAGONS","WITHERED");
-
+        p1.Input_Sword_Stats_By_Description("ASPECT_OF_THE_DRAGONS","NONE");
+        p1.Input_Sword_Stats_By_Description("NONE","WITHERED");
         p1.ShowUserStatedStats();
 
         //p1.Input_Sword_Stats("Excalibur",56,-67,34,89);

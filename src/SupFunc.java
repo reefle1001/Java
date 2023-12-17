@@ -62,31 +62,7 @@ class SupFunc {
 
     /* SUPPORTING FUNCTION 4 - COUNTER CHECK */
 
-    /* SUPPORTING FUNCTION 4.1 - ARMOR COUNTER CHECK (MAKES SURE USER HAS ONLY STATED 1 ARMOR) */
-    private static int CounterCheck_Armor(){
-
-        if(PLR_STATS.Counter_Armor >1)
-        {
-            System.out.println("You can only have 1 Armor. You currently have : " + PLR_STATS.Counter_Armor);
-            return 1; //more than 1 armor have been stated
-        }
-
-        else return 0; // <= 1 Armor
-    }
-
-    /* SUPPORTING FUNCTION 4.2 - SWORD COUNTER CHECK (MAKES SURE USER HAS ONLY STATED 1 Sword) */
-    private static int CounterCheck_Sword(){
-
-        if(PLR_STATS.Counter_Sword > 1)
-        {
-            System.out.println("You can only have 1 Armor. You currently have : " + PLR_STATS.Counter_Sword);
-            return 1; //more than 1 sword have been stated
-        }
-
-        else return 0; // <= 1 Sword
-    }
-
-    /* SUPPORTING FUNCTION 4.3 - NonValidValues COUNTER CHECK (MAKES SURE USER HAS ONLY STATED VALID VALUES) */
+    /* SUPPORTING FUNCTION 4.0 - NonValidValues COUNTER CHECK (MAKES SURE USER HAS ONLY STATED VALID VALUES) */
     private static int CounterCheck_NonValidValues(){
 
         if(PLR_STATS.Counter_NonValidValues > 0)
@@ -97,11 +73,65 @@ class SupFunc {
 
         else return 0; //all values are valid
     }
+
+    /* SUPPORTING FUNCTION 4.1 - ARMOR BASE STATS COUNTER CHECK (MAKES SURE USER HAS ONLY STATED 1 ARMOR BASE STATS INSTANCE) */
+    private static int CounterCheck_Armor_Base_Stats(){
+
+        if(PLR_STATS.Counter_Armor_Base_Stats >1)
+        {
+            System.out.println("You can only have 1 ARMOR BASE STATS INSTANCE. You currently have : " + PLR_STATS.Counter_Armor_Base_Stats);
+            return 1; //more than 1 armor have been stated
+        }
+
+        else return 0; // <= 1 Armor
+    }
+
+    /* SUPPORTING FUNCTION 4.2 - SWORD BASE STATS COUNTER CHECK (MAKES SURE USER HAS ONLY STATED 1 SWORD BASE STATS INSTANCE) */
+    private static int CounterCheck_Sword_Base_Stats(){
+
+        if(PLR_STATS.Counter_Sword_Base_Stats > 1)
+        {
+            System.out.println("You can only have 1 SWORD BASE STATS INSTANCE. You currently have : " + PLR_STATS.Counter_Sword_Base_Stats);
+            return 1; //more than 1 sword have been stated
+        }
+
+        else return 0; // <= 1 Sword
+    }
+
+    /* SUPPORTING FUNCTION 4.3 - ARMOR REFORGE STATS COUNTER CHECK (MAKES SURE USER HAS ONLY STATED 1 ARMOR REFORGE STATS INSTANCE) */
+    private static int CounterCheck_Armor_Reforge_Stats(){
+
+        if(PLR_STATS.Counter_Armor_Reforge_Stats > 1)
+        {
+            System.out.println("You can only have 1 ARMOR REFORGE STATS INSTANCE. You currently have : " + PLR_STATS.Counter_Armor_Reforge_Stats);
+            return 1; //more than 1 sword have been stated
+        }
+
+        else return 0; // <= 1 Sword
+    }
+
+    /* SUPPORTING FUNCTION 4.1 - SWORD REFORGE STATS COUNTER CHECK (MAKES SURE USER HAS ONLY STATED 1 SWORD REFORGE STATS INSTANCE) */
+    private static int CounterCheck_Sword_Reforge_Stats(){
+
+        if(PLR_STATS.Counter_Sword_Reforge_Stats > 1)
+        {
+            System.out.println("You can only have 1 SWORD REFORGE STATS INSTANCE. You currently have : " + PLR_STATS.Counter_Sword_Reforge_Stats);
+            return 1; //more than 1 sword have been stated
+        }
+
+        else return 0; // <= 1 Sword
+    }
+
+    /* SUPPORTING FUNCTION 4.5 - Counter Check - Checks if counters have been surpassed */
      static int CounterCheck(){
-         if (SupFunc.CounterCheck_Armor() == 1) {return 1;} //function returns 1 if more than 1 sword have been described
-         if (SupFunc.CounterCheck_Sword() == 1) {return 1;} //function returns 1 if more than 1 armor have been described
-         if (SupFunc.CounterCheck_NonValidValues() == 1) {return 1;} //function returns 1 if non valid values have been stated
-         else {return 0;} //function returns 0 if everything is cool
+         int L = 0; // We introduce L so if there are multiple Counter Overpasses, we get to see all warnings
+         if (SupFunc.CounterCheck_NonValidValues() == 1) {L = 1;}
+         if (SupFunc.CounterCheck_Armor_Base_Stats() == 1) {L =  1;}
+         if (SupFunc.CounterCheck_Sword_Base_Stats() == 1) {L =  1;}
+         if (SupFunc.CounterCheck_Armor_Reforge_Stats() == 1) {L =  1;}
+         if (SupFunc.CounterCheck_Sword_Reforge_Stats() == 1) {L =  1;}
+         if (L == 1) {return 1;} //function returns 1 if there are more than 1 same stats instances
+         else {return 0;} //function returns 0 if every counter has not been surpassed.
      }
 
 
@@ -133,7 +163,7 @@ class SupFunc {
 
     static float getDmgMLTPR(){
         float DmgMltpr;
-        if (PLR_STATS.CombatSkill<=50) {
+        if (PLR_STATS.CombatSkill <= 50) {
             DmgMltpr = 1 + ( PLR_STATS.CombatSkill * 0.04F ) + PLR_STATS.WpnEnchants;
         } else DmgMltpr = 1 + ( 50 * 0.04F + ( PLR_STATS.CombatSkill - 50 ) * 0.01F ) + PLR_STATS.WpnEnchants;
         return (DmgMltpr);

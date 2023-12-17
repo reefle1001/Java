@@ -34,14 +34,6 @@ class PLR_STATS {
     static final int EquipDef = 75;
     static final int EquipStr = 60;
 
-    //STATS FROM REFORGES [WITHERED sword][SPIKED armor(stats are multiplied by a factor of 4)]
-    static int ReWpnStr = 140;
-    static int ReArmorStr = 40; // 4 * 10
-    static int ReArmorCD = 40; // 4 * 10
-    static int ReArmorCC = 40; // 4 * 10
-    static int ReArmorAtSp = 16; // 4 * 4
-    static int ReArmorHP = 32; // 4 * 8
-    static int ReArmorDef = 32; // 4 * 8
 
     //POWER STONES
     static final float PwrStStr = 83F;
@@ -99,8 +91,15 @@ class PLR_STATS {
     /*WEAPON STATS*/
     static int Base_Wpn_Dmg;
     static int Base_Wpn_Str;
-    static int Base_Wpn_CC;
-    static int Base_Wpn_CD;
+
+    //STATS FROM REFORGES [each Armor Reforge is shown as single-item boost)]
+    static int ReWpnStr;
+    static int ReArmorStr;
+    static int ReArmorCD;
+    static int ReArmorCC;
+    static int ReArmorAtSp;
+    static int ReArmorHP;
+    static int ReArmorDef;
 
 
 
@@ -111,11 +110,11 @@ class PLR_STATS {
     //DEFENSIVE STATS
 
     static float HP() {
-        return SupDrMLTPR * (HPSinglePB * 4 /*4items*/ * TN_HotAndFuming_PB) + BasePlayerHP + EquipHP + ReArmorHP + Base_Armor_HP;
+        return SupDrMLTPR * (HPSinglePB * 4 /*4items*/ * TN_HotAndFuming_PB) + BasePlayerHP + EquipHP + (4 * ReArmorHP) + Base_Armor_HP;
     }
 
     static float Def() {
-        return SupDrMLTPR * (DefSinglePB * 4 /*4items*/ * (TN_HotAndFuming_PB) + BasePlayerDef + EquipDef + ReArmorDef + PotionDef + Base_Armor_Def);
+        return SupDrMLTPR * (DefSinglePB * 4 /*4items*/ * (TN_HotAndFuming_PB) + BasePlayerDef + EquipDef + (4 * ReArmorDef) + PotionDef + Base_Armor_Def);
     }
 
     static float EHP() {
@@ -133,19 +132,19 @@ class PLR_STATS {
 
     //OFFENSIVE STATS
     static float Str() {
-        return SupDrMLTPR * (StrSinglePB * (TN_HotAndFuming_PB) + BasePlayerStr + PetStr + EquipStr + ReArmorStr + PotionStr + Base_Wpn_Str + Base_Armor_Str);
+        return SupDrMLTPR * ((StrSinglePB * (TN_HotAndFuming_PB)) + BasePlayerStr + PetStr + EquipStr + (4 * ReArmorStr) + PotionStr + Base_Wpn_Str + Base_Armor_Str);
     }
 
     static float CD() {
-        return SupDrMLTPR * (BasePlayerCD + ReArmorCD + PwrStCD + TunPntsCD + PotionCD + Base_Wpn_CD + Base_Armor_CD);
+        return SupDrMLTPR * (BasePlayerCD + (4 * ReArmorCD) + PwrStCD + TunPntsCD + PotionCD  + Base_Armor_CD);
     }
 
     static float CC() {
-        return SupDrMLTPR * (BasePlayerCC + PotionCC + ReArmorCC + Base_Wpn_CC + Base_Armor_CC);
+        return SupDrMLTPR * (BasePlayerCC + PotionCC + (4 * ReArmorCC) + Base_Armor_CC);
     }
 
     static float AtSp() {
-        return SupDrMLTPR * (BasePlayerAtSp + PetAtSp + ReArmorAtSp + PwrStAtSp + TunPntsAtSp);
+        return SupDrMLTPR * (BasePlayerAtSp + PetAtSp + (4 * ReArmorAtSp) + PwrStAtSp + TunPntsAtSp);
     }
 
     static float Fer() {
@@ -215,12 +214,6 @@ class PLR_STATS {
         }
         SupFunc.ChangeLine();
 
-        //STATS FROM REFORGES [Withered SWORD][SPIKED ARMOR(stats are multiplied by a factor of 4)]
-        for (String s : Arrays.asList("//STATS FROM REFORGES [Withered SWORD][SPIKED ARMOR(stats are multiplied by a factor of 4)]", "ReWpnStr : " + ReWpnStr, "ReArmorStr : " + ReArmorStr, "ReArmorCD : " + ReArmorCD, "ReArmorCC : " + ReArmorCC, "ReArmorAtSp : " + ReArmorAtSp, "ReArmorHP : " + ReArmorHP, "ReArmorDef : " + ReArmorDef)) {
-            System.out.println(s);
-        }
-        SupFunc.ChangeLine();
-
         //POWER STONES
         for (String s : Arrays.asList("//POWER STONES", "PwrStStr : " + PwrStStr, "PwrStCD : " + PwrStCD, "PwrStAtSp : " + PwrStAtSp)) {
             System.out.println(s);
@@ -275,15 +268,25 @@ class PLR_STATS {
 
         /* BASE ARMOR STATS */
         //DEFENSIVE
-        for (String s : Arrays.asList("Base_Armor_HP : " + Base_Armor_HP, "Base_Armor_Def : " + Base_Armor_Def, "Base_Armor_Str : " + Base_Armor_Str, "Base_Armor_CD : " + Base_Armor_CD, "Base_Armor_CC : " + Base_Armor_CC)) {
+        for (String s : Arrays.asList("Base_Armor_HP : " + Base_Armor_HP, "Base_Armor_Def : " + Base_Armor_Def)) {
             System.out.println(s);
         }
+        SupFunc.ChangeLine();
 
         //OFFENSIVE
+        for (String s : Arrays.asList("Base_Armor_Str : " + Base_Armor_Str , "Base_Armor_CD : " + Base_Armor_CD , "Base_Armor_CC : " + Base_Armor_CC)) {
+            System.out.println(s);
+        }
         SupFunc.ChangeLine();
 
         /* WEAPON STATS */
-        for (String s : Arrays.asList("Wpn_DMG : " + Base_Wpn_Dmg, "Wpn_Str : " + Base_Wpn_Str, "Wpn_CC : " + Base_Wpn_CC, "Wpn_CD : " + Base_Wpn_CD)) {
+        for (String s : Arrays.asList("Wpn_DMG : " + Base_Wpn_Dmg, "Wpn_Str : " + Base_Wpn_Str )) {
+            System.out.println(s);
+        }
+        SupFunc.ChangeLine();
+
+        //STATS FROM REFORGES  [each Armor Reforge is shown as single-item boost)]
+        for (String s : Arrays.asList("//STATS FROM REFORGES [each Armor Reforge is shown as single-item boost)]", "ReWpnStr : " + ReWpnStr, "ReArmorStr : " + ReArmorStr, "ReArmorCD : " + ReArmorCD, "ReArmorCC : " + ReArmorCC, "ReArmorAtSp : " + ReArmorAtSp, "ReArmorHP : " + ReArmorHP, "ReArmorDef : " + ReArmorDef)) {
             System.out.println(s);
         }
         SupFunc.ChangeLine();
@@ -337,13 +340,15 @@ class PLR_STATS {
     /* ==================  STATS INSERTION AND VIABILITY TESTING [S.I.A.V.T.] [METHOD 1] ================= */
     /* =================================================================================================== */
     static int Counter_NonValidValues = 0;
-    static int Counter_Armor = 0;
-    static int Counter_Sword = 0;
+    static int Counter_Armor_Base_Stats = 0;
+    static int Counter_Sword_Base_Stats = 0;
+    static int Counter_Armor_Reforge_Stats = 0;
+    static int Counter_Sword_Reforge_Stats = 0;
 
     //S.I.A.V.T. FUNCTION N1 - STATING BASE ARMOR NAME & STATS [METHOD 1]
     void Input_Armor_Stats_Manually(String ArmorName, int BaseArmorHP, int BaseArmorDef, int BaseArmorStr, int BaseArmorCD, int BaseArmorCC) {
         //Used to check if you have only 1 armor described
-        Counter_Armor++;
+        Counter_Armor_Base_Stats++;
         //STAT CHECK
         int[] UserStated_ArmorStats = {BaseArmorHP, BaseArmorDef, BaseArmorStr, BaseArmorCD, BaseArmorCC};
         //IF STAT CHECK PASSED, APPOINT VALUES
@@ -359,20 +364,18 @@ class PLR_STATS {
     }
 
     //S.I.A.V.T. FUNCTION N2 - STATING WEAPON NAME & STATS [METHOD 1 - USER MANUALLY ENTERS STATS]
-    void Input_Sword_Stats_Manually(String SwordName, int WpnDMG, int WpnStr, int WpnCC, int WpnCD) {
+    void Input_Sword_Stats_Manually(String SwordName, int WpnDMG, int WpnStr) {
         //Used to check if you have only 1 sword described
-        Counter_Sword++;
+        Counter_Sword_Base_Stats++;
         //Reappoint Boolean Value to true
         //STAT CHECK
-        int[] UserStated_SwordStats = {WpnDMG, WpnStr, WpnCC, WpnCD};
+        int[] UserStated_SwordStats = {WpnDMG, WpnStr};
         //IF STAT CHECK PASSED, APPOINT VALUES
         //System.out.println("Don't delete line. Else code doesn't work (idk why) : " + SupFunc.InnerStatCheck( UserStated_SwordStats ));
         if (SupFunc.InnerStatCheck(UserStated_SwordStats) == 0) {
             Sword_Name_M1 = SwordName;
             Base_Wpn_Dmg = WpnDMG;
             Base_Wpn_Str = WpnStr;
-            Base_Wpn_CC = WpnCC;
-            Base_Wpn_CD = WpnCD;
         } else Counter_NonValidValues++;
     }
 
@@ -388,8 +391,9 @@ class PLR_STATS {
 
 
     void Input_Armor_Stats_By_Description(String ItemName, String ItemReforge){
-        //Used to check if you have only 1 armor described
-        Counter_Armor++;
+        //Used to check if you have only 1 instance were armor base/reforge stats are described
+        Counter_Armor_Base_Stats++;
+        Counter_Armor_Reforge_Stats++;
         //boolean Values to check if viable names have been stated
         boolean End_M2_ArmorName = true;
         boolean End_M2_ArmorReforge = true;
@@ -434,6 +438,8 @@ class PLR_STATS {
 
         switch (I_NA) {
             case 1:
+                //No Base Armor stats were stated. Therefore, we subtract -1 on the counter
+                Counter_Armor_Base_Stats--;
                 break;
             case 2:
                 Base_Armor_HP = 450;
@@ -447,22 +453,25 @@ class PLR_STATS {
 
         switch (I_RA) {
             case 1:
+                //No Reforge Armor stats were stated. Therefore, we subtract -1 on the counter
+                Counter_Armor_Reforge_Stats--;
                 break;
             case 2:
-                ReArmorHP = 32;
-                ReArmorDef = 32;
-                ReArmorStr = 40;
-                ReArmorCD = 40;
-                ReArmorCC = 40;
-                ReArmorAtSp = 16;
+                ReArmorHP = 8;
+                ReArmorDef = 8;
+                ReArmorStr = 10;
+                ReArmorCD = 10;
+                ReArmorCC = 10;
+                ReArmorAtSp = 4;
                 break;
         }
 
     }
 
     void Input_Sword_Stats_By_Description(String SwordName, String SwordReforge){
-        //Used to check if you have only 1 sword described
-        Counter_Sword++;
+        //Used to check if you have only 1 instance were sword base/reforge stats are described
+        Counter_Sword_Base_Stats++;
+        Counter_Sword_Reforge_Stats++;
         //boolean Values to check if viable names have been stated
         boolean End_M2_SwordName = true;
         boolean End_M2_SwordReforge = true;
@@ -511,17 +520,19 @@ class PLR_STATS {
 
         switch (I_NS) {
             case 1:
+                //No Base Sword stats were stated. Therefore, we subtract -1 on the counter
+                Counter_Sword_Base_Stats--;
                 break;
             case 2:
                 Base_Wpn_Dmg = 225;
                 Base_Wpn_Str = 100;
-                Base_Wpn_CD = 0;
-                Base_Wpn_CC = 0;
                 break;
         }
 
         switch (I_RS) {
             case 1:
+                //No Reforge Sword stats were stated. Therefore, we subtract -1 on the counter
+                Counter_Sword_Reforge_Stats--;
                 break;
             case 2:
                 ReWpnStr = 140;
