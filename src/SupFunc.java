@@ -68,10 +68,10 @@ class SupFunc {
         if(PLR_STATS.Counter_Armor >1)
         {
             System.out.println("You can only have 1 Armor. You currently have : " + PLR_STATS.Counter_Armor);
-            return 1;
+            return 1; //more than 1 armor have been stated
         }
 
-        else return 0;
+        else return 0; // <= 1 Armor
     }
 
     /* SUPPORTING FUNCTION 4.2 - SWORD COUNTER CHECK (MAKES SURE USER HAS ONLY STATED 1 Sword) */
@@ -80,10 +80,10 @@ class SupFunc {
         if(PLR_STATS.Counter_Sword > 1)
         {
             System.out.println("You can only have 1 Armor. You currently have : " + PLR_STATS.Counter_Sword);
-            return 1;
+            return 1; //more than 1 sword have been stated
         }
 
-        else return 0;
+        else return 0; // <= 1 Sword
     }
 
     /* SUPPORTING FUNCTION 4.3 - NonValidValues COUNTER CHECK (MAKES SURE USER HAS ONLY STATED VALID VALUES) */
@@ -92,16 +92,16 @@ class SupFunc {
         if(PLR_STATS.Counter_NonValidValues > 0)
         {
             System.out.println("Please Change Non Valid Values Noted Above : " + PLR_STATS.Counter_NonValidValues);
-            return 1;
+            return 1; //non valid values have been stated
         }
 
-        else return 0;
+        else return 0; //all values are valid
     }
      static int CounterCheck(){
-         if (SupFunc.CounterCheck_Armor() == 1) {return 1;}
-         if (SupFunc.CounterCheck_Sword() == 1) {return 1;}
-         if (SupFunc.CounterCheck_NonValidValues() == 1) {return 1;}
-         else {return 0;}
+         if (SupFunc.CounterCheck_Armor() == 1) {return 1;} //function returns 1 if more than 1 sword have been described
+         if (SupFunc.CounterCheck_Sword() == 1) {return 1;} //function returns 1 if more than 1 armor have been described
+         if (SupFunc.CounterCheck_NonValidValues() == 1) {return 1;} //function returns 1 if non valid values have been stated
+         else {return 0;} //function returns 0 if everything is cool
      }
 
 

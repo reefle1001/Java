@@ -1,5 +1,5 @@
 class Tutorial {
-    static void getTutoial(){
+    static void getTutorial(){
         System.out.println("""
                 
                 
