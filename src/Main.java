@@ -3,11 +3,14 @@ public class Main {
 
         PLR_STATS p1;
         p1 = new PLR_STATS();
-        p1.TUTORIAL();
+        //p1.TUTORIAL();
 
 
         //p1.Input_Armor_Stats_By_Description("SUPERIOR_DRAGON", "SPIKED");
-        //p1.ShowAllStableStats();
+
+        p1.Input_Sword_Stats_By_Description("ASPECT_OF_THE_DRAGONS","WITHERED");
+
+        p1.ShowUserStatedStats();
 
         //p1.Input_Sword_Stats("Excalibur",56,-67,34,89);
         //p1.Input_Armor_Stats("45", 67,56,45,34,23);

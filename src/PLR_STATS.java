@@ -436,11 +436,11 @@ class PLR_STATS {
             case 1:
                 break;
             case 2:
-                Base_Armor_HP = 1;
-                Base_Armor_Def = 1;
-                Base_Armor_Str = 1;
-                Base_Armor_CD = 1;
-                Base_Armor_CC = 1;
+                Base_Armor_HP = 450;
+                Base_Armor_Def = 600;
+                Base_Armor_Str = 40;
+                Base_Armor_CD = 40;
+                Base_Armor_CC = 8;
                 SupDrMLTPR = 1.05F;
                 break;
         }
@@ -449,12 +449,12 @@ class PLR_STATS {
             case 1:
                 break;
             case 2:
-                ReArmorHP = 1;
-                ReArmorDef = 1;
-                ReArmorStr = 1;
-                ReArmorCD = 1;
-                ReArmorCC = 1;
-                ReArmorAtSp = 1;
+                ReArmorHP = 32;
+                ReArmorDef = 32;
+                ReArmorStr = 40;
+                ReArmorCD = 40;
+                ReArmorCC = 40;
+                ReArmorAtSp = 16;
                 break;
         }
 
@@ -473,7 +473,7 @@ class PLR_STATS {
             case "ASPECT_OF_THE_DRAGONS" -> I_NS = 2;
             default -> {
                 System.out.println("""
-                                Please Insert Viable Armor Name :
+                                Please Insert Viable Sword Name :
                                 [NONE]
                                 [ASPECT_OF_THE_DRAGONS]
                                 (use any text inside the parenthesis)
@@ -488,7 +488,7 @@ class PLR_STATS {
             case "WITHERED" -> I_RS = 2;
             default -> {
                 System.out.println("""
-                                Please Insert Viable Armor Reforge Name :
+                                Please Insert Viable Sword Reforge Name :
                                 [NONE]
                                 [WITHERED]
                                 (use any text inside the parenthesis)
@@ -513,10 +513,10 @@ class PLR_STATS {
             case 1:
                 break;
             case 2:
-                Base_Wpn_Dmg = 1;
-                Base_Wpn_Str = 1;
-                Base_Wpn_CD = 1;
-                Base_Wpn_CC = 1;
+                Base_Wpn_Dmg = 225;
+                Base_Wpn_Str = 100;
+                Base_Wpn_CD = 0;
+                Base_Wpn_CC = 0;
                 break;
         }
 
@@ -524,7 +524,7 @@ class PLR_STATS {
             case 1:
                 break;
             case 2:
-                ReWpnStr = 1;
+                ReWpnStr = 140;
                 break;
         }
 
