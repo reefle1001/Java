@@ -2,11 +2,12 @@ public class Main {
     public static void main(String[] args) {
 
         PLR_STATS p1;
-        p1 = new PLR_STATS();
+        //p1 = new PLR_STATS();
+        p1 = new PLR_STATS("STANDARD_STATS");
 
 
         /* Guide */
-        p1.Welcome();
+        //p1.Welcome();
 //        p1.GetHelp(0);
 //        p1.GetHelp(1);
 //        p1.GetHelp(2);
@@ -21,7 +22,8 @@ public class Main {
 
         /* Shit to PLay With */
 
-        //p1.ShowAllStableStats();
+        /* There is a difference if functions <Show(STATS)> is called here before stats insertion functions, or after. */
+        p1.ShowAllStableStats();
         //p1.ShowUserStatedStats();
         //p1.ShowPlayerStats();
 
@@ -35,12 +37,15 @@ public class Main {
         //p1.Input_Sword_Stats_By_Description("rddddhhdh","drdhsfs");
 
 
-        //p1.Input_Armor_Stats("45", -60,50,-40,30,20);
-        //p1.Input_Armor_Stats("45", -20,50,50,10,-20);
+        //p1.Input_Armor_Stats_Manually("45", -60,50,-40,30,20);
+        //p1.Input_Armor_Stats_Manually("45", 20,50,50,10,20);
         //p1.Input_Armor_Stats_By_Description("NONE", "SPIKED");
         //p1.Input_Armor_Stats_By_Description("SUPERIOR_DRAGON" , "NONE");
         //p1.Input_Armor_Stats_By_Description("SUPERIOR_DRAGON" , "SPIKED");
         //p1.Input_Armor_Stats_By_Description("dhhgsN" , "fhftfdhf");
+
+
+
 
 
         //p1.ShowAllStableStats();

@@ -7,7 +7,7 @@ class PLR_STATS {
     /* These stats contain variables (like ACCESSORIES) That affect the end result the same way, regardless the Armor &/or Sword chosen by the user.
       In other words they don't change depending on user-stated values */
 
-
+    /* FINAL VALUES - TRUE STABLES*/
     //POTATO BOOKS
     static final int HPSinglePB = 4;
     static final int DefSinglePB = 2;
@@ -15,46 +15,47 @@ class PLR_STATS {
     static final int StrSinglePB = 2;
     static final int TN_HotAndFuming_PB = 15; //Total Number of Hot and Fuming Potato Books (1 item)
 
+    /* SOON TO BE UNSTABLE VALUES ONCE YOU CAN INSERT VALUES AS USER */
     //BASE PLAYER STATS
-    static final float BasePlayerHP = 719.2F;
-    static final float BasePlayerDef = 100F;
-    static final float BasePlayerStr = 70;
-    static final float BasePlayerCD = 57;
-    static final float BasePlayerCC = 42.5F;
-    static final float BasePlayerAtSp = 0;
-    static final float BasePLayerFer = 0;
-    static final float CombatSkill = 25;
+    static float BasePlayerHP;
+    static float BasePlayerDef;
+    static float BasePlayerStr;
+    static float BasePlayerCD;
+    static float BasePlayerCC;
+    static float BasePlayerAtSp;
+    static float BasePLayerFer;
+    static float CombatSkill;
 
     //PET STATS
-    static final float PetStr = 60;
-    static final float PetAtSp = 35;
+    static float PetStr;
+    static float PetAtSp;
 
     //EQUIPMENT STATS
-    static final int EquipHP = 115;
-    static final int EquipDef = 75;
-    static final int EquipStr = 60;
+    static int EquipHP;
+    static int EquipDef;
+    static int EquipStr;
 
 
     //POWER STONES
-    static final float PwrStStr = 83F;
-    static final float PwrStCD = 332F;
-    static final float PwrStAtSp = 15F;
+    static float PwrStStr;
+    static float PwrStCD;
+    static float PwrStAtSp;
 
     //TUNING POINTS
-    static final float TunPntsCD = 5F;
-    static final float TunPntsAtSp = 12.3F;
+    static float TunPntsCD;
+    static float TunPntsAtSp;
 
     //POTIONS
-    static float PotionCD = 30F;
-    static float PotionCC = 20F;
-    static float PotionStr = 75F;
-    static float PotionDef = 55F;
+    static float PotionCD;
+    static float PotionCC;
+    static float PotionStr;
+    static float PotionDef;
 
 
     //MULTIPLIERS
-    static float SupDrMLTPR = 1.00F; //Used by Superior Dragon Armor - * It's both a stable (1.00) & a user-stated value (usually 1.05) *
-    static float ArmorDmgMLTPL = 1.00F;
-    static float WpnEnchants = 5F; // One For All Ultimate Enchant
+    static float SupDrMLTPR; //Used by Superior Dragon Armor - * It's both a stable (1.00) & a user-stated value (usually 1.05) *
+    static float ArmorDmgMLTPL;
+    static float WpnEnchants; // One For All Ultimate Enchant
 
 
 
@@ -108,13 +109,52 @@ class PLR_STATS {
 
     }
 
-    /*PLR_STATS(String STANDARD_STATS){
-        make in new class (...), function getStandardStats()
-        if(Objects.equals(STANDARD_STATS, "STANDARD_STATS")){
-            standard stats you want to be assigned
-            for example withered/spiked reforge, phoenix/ender dragon pet, etc. , etc.
+    PLR_STATS(String STANDARD_STATS){
+        if (STANDARD_STATS.equals("STANDARD_STATS")){
+            //BASE PLAYER STATS
+            BasePlayerHP = 719.2F;
+            BasePlayerDef = 100F;
+            BasePlayerStr = 70;
+            BasePlayerCD = 57;
+            BasePlayerCC = 42.5F;
+            BasePlayerAtSp = 0;
+            BasePLayerFer = 0;
+            CombatSkill = 25;
+
+            //PET STATS
+            PetStr = 60;
+            PetAtSp = 35;
+
+            //EQUIPMENT STATS
+            EquipHP = 115;
+            EquipDef = 75;
+            EquipStr = 60;
+
+
+            //POWER STONES
+            PwrStStr = 83F;
+            PwrStCD = 332F;
+            PwrStAtSp = 15F;
+
+            //TUNING POINTS
+            TunPntsCD = 5F;
+            TunPntsAtSp = 12.3F;
+
+            //POTIONS
+            PotionCD = 30F;
+            PotionCC = 20F;
+            PotionStr = 75F;
+            PotionDef = 55F;
+
+
+            //MULTIPLIERS
+            SupDrMLTPR = 1.00F; //Used by Superior Dragon Armor - * It's both a stable (1.00) & a user-stated value (usually 1.05) *
+            ArmorDmgMLTPL = 1.00F;
+            WpnEnchants = 5F; // One For All Ultimate Enchant
+
         }
-    }*/
+        else return;
+    }
 
 
 
@@ -617,5 +657,4 @@ class PLR_STATS {
 
 
 }
-
 

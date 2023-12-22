@@ -12,7 +12,8 @@ class SupFunc {
 
     static void ShowNames() {
         String s1, s2;
-        s2 = s1 = null;
+        s2 = null;
+        s1 = null;
 
         if (PLR_STATS.Armor_Name_M1!=null) s1 = PLR_STATS.Armor_Name_M1;
         else if (PLR_STATS.Armor_Name_M2!=null) s1 = PLR_STATS.Armor_Name_M2;
