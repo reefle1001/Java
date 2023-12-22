@@ -21,7 +21,7 @@ class SupFunc {
 
         if (PLR_STATS.Sword_Name_M1!=null) s2 = PLR_STATS.Sword_Name_M1;
         else if (PLR_STATS.Sword_Name_M2!=null) s2 = PLR_STATS.Sword_Name_M2;
-        else s1 = "NONE";
+        else s2 = "NONE";
 
         System.out.println("Armor : " + s1);
         System.out.println("Sword : " + s2);

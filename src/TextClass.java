@@ -6,6 +6,8 @@ class TextClass {
                 Hello!
                 Welcome to the Super-Duper-Ultra Stats Calculator!
                 
+                For standard stats, use "STANDARD_STATS" string inside the constructor.
+                
                 Available Functions:
                 [0] GetHelp(...);
                 [1] ShowAllStableStats();

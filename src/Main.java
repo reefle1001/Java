@@ -10,7 +10,7 @@ public class Main {
 
 
         /* Guide */
-        //p1.Welcome();
+        p1.Welcome();
 //        p1.GetHelp(0);
 //        p1.GetHelp(1);
 //        p1.GetHelp(2);
@@ -52,7 +52,7 @@ public class Main {
 
 
         //p1.ShowAllStableStats();
-        //p1.ShowUserStatedStats();
+        p1.ShowUserStatedStats();
         //p1.ShowPlayerStats();
 
 
