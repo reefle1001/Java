@@ -473,7 +473,7 @@ class PLR_STATS {
         ...
     }
 
-    void Input_ReforgeStones_Stats_Manualy(...){
+    void Input_ReforgeStones_Stats_Manually(...){
         ...
     }*/
 
@@ -504,6 +504,8 @@ class PLR_STATS {
             case "SUPERIOR_DRAGON" -> I_NA = 2;
             default -> {
                 System.out.println("""
+                                
+                                
                                 Please Insert Viable Armor Name :
                                 [NONE]
                                 [SUPERIOR_DRAGON]
@@ -522,6 +524,8 @@ class PLR_STATS {
             case "SPIKED" -> I_RA = 2;
             default -> {
                 System.out.println("""
+                                
+                                
                                 Please Insert Viable Armor Reforge Name :
                                 [NONE]
                                 [SPIKED]
@@ -589,6 +593,8 @@ class PLR_STATS {
             case "ASPECT_OF_THE_DRAGONS" -> I_NS = 2;
             default -> {
                 System.out.println("""
+                                
+                                
                                 Please Insert Viable Sword Name :
                                 [NONE]
                                 [ASPECT_OF_THE_DRAGONS]
@@ -607,6 +613,8 @@ class PLR_STATS {
             case "WITHERED" -> I_RS = 2;
             default -> {
                 System.out.println("""
+                                
+                                
                                 Please Insert Viable Sword Reforge Name :
                                 [NONE]
                                 [WITHERED]
