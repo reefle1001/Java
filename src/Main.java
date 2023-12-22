@@ -4,6 +4,9 @@ public class Main {
         PLR_STATS p1;
         //p1 = new PLR_STATS();
         p1 = new PLR_STATS("STANDARD_STATS");
+        //p1 = new PLR_STATS("sadfgsdghrs");
+
+
 
 
         /* Guide */
