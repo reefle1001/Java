@@ -1,5 +1,7 @@
 /*
 
+make a new text block with available armor sets/swords, and name it accordingly. [there are many places where they are mentioned]
+
 
 //ENEMY STATS
 int EnHP;
