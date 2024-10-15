@@ -49,8 +49,17 @@ String day(int d) {
   return str_day;
 }
 
-
 //05
+int factorial(int n) {		
+        int result = 1;
+        
+		for(int i = 1; i <= n; i++)
+			result *= i;
+			
+		return result;
+}
+
+//06
 int maxOfFour(int x1,int x2,int x3,int x4){
     int max=x1;
     if (x2>max) max=x2;
@@ -60,7 +69,7 @@ int maxOfFour(int x1,int x2,int x3,int x4){
 }
 
 
-//06
+//07
 int maxVal(int[]A){
     //int[]A=new int[j];
     int max=A[0];
@@ -69,11 +78,29 @@ int maxVal(int[]A){
     return max;
 }
 
-//07
+//08
 int sumOfFirstAndLast(int[] A){
     int x=A.length-1;
     int sum=A[0]+A[x];
     return sum;
+}
+
+//09
+int prefer(int[] A, int c1, int c2) {
+    int[] inverse = new int[A.length];
+    for (int i = 0; i<A.length ; i++){
+        inverse[A[i]] = i;
+    }
+    if (inverse[c1]<=inverse[c2])
+        return c1;
+    else return c2;
+}
+
+//10
+int preferInverted(int[] B, int c1, int c2) {
+    if (B[c1]<=B[c2])
+        return c1;
+    else return c2;
 }
 
 */
